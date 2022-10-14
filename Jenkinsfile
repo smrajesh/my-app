@@ -30,12 +30,12 @@ node{
    }
    stage('Remove Previous Container'){
 	try{
-		sh 'docker rm -f  7c76159a5c2c'
+		sh 'docker rm -f  tomcattest'
 	}catch(error){
 		//  do nothing if there is an exception
 	}
    stage('Docker deployment'){
-   sh 'docker run -d -p 8090:8080 --name tomcd rajesh3377/myweb:0.0.2' 
+   sh 'docker run -d -p 8090:8080 --name tomcattest rajesh3377/myweb:0.0.2' 
    }
 }
 }
